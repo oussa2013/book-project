@@ -1,0 +1,7 @@
+ma/fst/test/presentation/controller/BookController.class
+ma/fst/test/presentation/model/Book.class
+ma/fst/test/dao/BookDaoImpl.class
+ma/fst/test/presentation/controller/FrontController.class
+ma/fst/test/service/BookServiceImpl.class
+ma/fst/test/dao/BookDao.class
+ma/fst/test/service/BookService.class
