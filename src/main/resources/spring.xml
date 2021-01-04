@@ -7,11 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-<context:component-scan base-package="ma.fst.test.presentation"></context:component-scan>
+<context:component-scan base-package="ma.fst.test"></context:component-scan>
 
     <bean id="ctrl" class="ma.fst.test.presentation.controller.BookController"></bean>
-<!--    <bean id="s" class="ma.fst.test.service.BookServiceImpl"></bean>
-    <bean id="d" class="ma.fst.test.dao.BookDaoImpl"></bean>-->
-
 
 </beans>

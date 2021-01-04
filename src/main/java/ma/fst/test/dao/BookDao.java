@@ -1,6 +1,7 @@
 package ma.fst.test.dao;
 
 import ma.fst.test.presentation.model.Book;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by Oussama_Qaiboub on 2020-12-31.

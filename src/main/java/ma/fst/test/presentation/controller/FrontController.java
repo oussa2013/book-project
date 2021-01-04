@@ -11,6 +11,7 @@ import java.util.Scanner;
  */
 public class FrontController {
 
+
     static ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
     static BookController bookController = (BookController) context.getBean("ctrl");
 
@@ -27,11 +28,22 @@ public class FrontController {
         //Construire l'objet
         Book book = new Book();
         book.setTitle(name);
-        book.setId(age);
+        book.setAge(age);
 
         // dispatcher vers le controlleur
         if (action.equals("/book/add")) {
-           // bookController.create(book);
+            bookController.create(book);
         }
+
+/*
+        Class c = Test.class;
+        Annotation annotation = c.getAnnotation(Programmer.class);
+        System.out.println(annotation.toString());
+
+
+        Annotation annotation2 = c.getAnnotation(Dev.class);
+        System.out.println(annotation2.toString());
+*/
+
     }
 }
