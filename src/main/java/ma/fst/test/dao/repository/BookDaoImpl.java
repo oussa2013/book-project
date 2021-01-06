@@ -29,7 +29,8 @@ public class BookDaoImpl implements BookDao {
     public BookEntity read(Integer id) {
 
         em.getTransaction().begin();
-        BookEntity bookEntity = em.find(id);
+        //BookEntity bookEntity = em.find(id);
+        BookEntity bookEntity = new BookEntity();
         em.getTransaction().commit();
         //System.out.println("read  : " + id);
        return bookEntity;
