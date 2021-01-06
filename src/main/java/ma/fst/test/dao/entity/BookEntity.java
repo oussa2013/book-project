@@ -1,5 +1,8 @@
 package ma.fst.test.dao.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 
@@ -10,6 +13,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Tbook")
+@Getter
+@Setter
 public class BookEntity {
 
     @Id
@@ -24,21 +29,6 @@ public class BookEntity {
     @Transient
     Double total;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public Double getTotal() {
-        return total;
-    }
 
     @Override
     public String toString() {
@@ -48,11 +38,4 @@ public class BookEntity {
                 '}';
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 }
