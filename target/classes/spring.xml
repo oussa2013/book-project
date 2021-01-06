@@ -11,4 +11,5 @@
 
     <bean id="ctrl" class="ma.fst.test.presentation.controller.BookController"></bean>
 
+
 </beans>

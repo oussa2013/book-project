@@ -1,12 +1,10 @@
 package ma.fst.test.service;
 
-import ma.fst.test.dao.BookDao;
-import ma.fst.test.dao.BookDaoImpl;
-import ma.fst.test.presentation.controller.BookController;
+import ma.fst.test.dao.entity.BookEntity;
+import ma.fst.test.dao.repository.BookDao;
+import ma.fst.test.mapper.BookMapper;
 import ma.fst.test.presentation.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,23 +15,30 @@ import org.springframework.stereotype.Service;
 public class BookServiceImpl implements BookService {
 
     @Autowired
-    BookDao bookDao ;
+    BookDao bookDao;
+
+    @Autowired
+    BookMapper bookMapper;
 
     @Override
     public Book create(Book book) {
-        bookDao.create(book);
+       // BookEntity bookEntity = bookMapper.convertToEntity(book);
+        bookDao.create(bookMapper.convertToEntity(book));
         return book;
     }
 
     @Override
-    public void read(Integer id) {
-        System.out.println("read  : " + id);
+    public Book read(Integer id) {
+        BookEntity bookEntity = bookDao.read(id);
+       // Book book = bookMapper.convertToModel(bookEntity);
+        //System.out.println("read  : " + id);
+        return bookMapper.convertToModel(bookEntity);
     }
 
     @Override
-    public Book update(Book book) {
-        System.out.println("update : " + book);
-        return book;
+    public Book update(Book bookEntity) {
+        System.out.println("update : " + bookEntity);
+        return bookEntity;
     }
 
     @Override

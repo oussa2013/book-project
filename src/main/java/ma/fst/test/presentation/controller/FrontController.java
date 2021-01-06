@@ -1,5 +1,6 @@
 package ma.fst.test.presentation.controller;
 
+import ma.fst.test.dao.entity.BookEntity;
 import ma.fst.test.presentation.model.Book;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -31,7 +32,7 @@ public class FrontController {
         book.setAge(age);
 
         // dispatcher vers le controlleur
-        if (action.equals("/book/add")) {
+        if (action.equals("/bookEntity/add")) {
             bookController.create(book);
         }
 

@@ -2,39 +2,45 @@ package ma.fst.test.presentation.model;
 
 import javax.persistence.*;
 
-
 /**
- * Created by Oussama_Qaiboub on 2020-12-31.
+ * Created by Oussama_Qaiboub on 2021-01-06.
  */
-
-@Entity
-@Table(name = "tbook")
 public class Book {
 
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy=GenerationType.AUTO)
     Integer id;
-
-    @Column(name = "titre")
     String title;
-
-    @Column(name = "age")
     Integer age;
+    Double total;
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                '}';
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void setAge(Integer age) {
         this.age = age;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public Double getTotal() {
+        return total;
     }
 }

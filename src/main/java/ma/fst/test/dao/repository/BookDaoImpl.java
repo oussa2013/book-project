@@ -1,6 +1,7 @@
-package ma.fst.test.dao;
+package ma.fst.test.dao.repository;
 
-import ma.fst.test.presentation.model.Book;
+import jdk.nashorn.internal.objects.annotations.Getter;
+import ma.fst.test.dao.entity.BookEntity;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -17,22 +18,27 @@ public class BookDaoImpl implements BookDao {
     private EntityManager em = emf.createEntityManager();
 
     @Override
-    public Book create(Book book) {
+    public BookEntity create(BookEntity bookEntity) {
         em.getTransaction().begin();
-        em.persist(book);
+        em.persist(bookEntity);
         em.getTransaction().commit();
-        return book;
+        return bookEntity;
     }
 
     @Override
-    public void read(Integer id) {
-        System.out.println("read  : " + id);
+    public BookEntity read(Integer id) {
+
+        em.getTransaction().begin();
+        BookEntity bookEntity = em.find(id);
+        em.getTransaction().commit();
+        //System.out.println("read  : " + id);
+       return bookEntity;
     }
 
     @Override
-    public Book update(Book book) {
-        System.out.println("update : " + book);
-        return book;
+    public BookEntity update(BookEntity bookEntity) {
+        System.out.println("update : " + bookEntity);
+        return bookEntity;
     }
 
     @Override

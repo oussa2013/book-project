@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ma.fst.test</groupId>
-    <artifactId>book-projet</artifactId>
+    <artifactId>bookEntity-projet</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>book-projet Maven Webapp</name>
+    <name>bookEntity-projet Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -53,6 +53,11 @@
             <artifactId>jta</artifactId>
             <version>1.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <!--      <dependency>
                   <groupId>mysql</groupId>
@@ -70,7 +75,7 @@
     </dependencies>
 
     <build>
-        <finalName>book-projet</finalName>
+        <finalName>bookEntity-projet</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
