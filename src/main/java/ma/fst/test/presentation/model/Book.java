@@ -13,7 +13,7 @@ public class Book {
 
     Integer id;
     String title;
-    Integer age;
+    Integer numOfPage;
     Double total;
 
 

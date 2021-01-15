@@ -4,6 +4,7 @@ import ma.fst.test.dao.entity.BookEntity;
 import ma.fst.test.presentation.model.Book;
 import ma.fst.test.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 public class BookController {
 
     @Autowired
+    @Qualifier("bookServiceImpl")
     BookService bookService ;
 
     public Book create(Book bookEntity) {
@@ -33,4 +35,5 @@ public class BookController {
         System.out.println("delete : " + id);
 
     }
+
 }

@@ -17,6 +17,7 @@ public class BookDaoImpl implements BookDao {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("abc");
     private EntityManager em = emf.createEntityManager();
 
+
     @Override
     public BookEntity create(BookEntity bookEntity) {
         em.getTransaction().begin();

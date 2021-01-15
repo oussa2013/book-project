@@ -2,8 +2,12 @@ package ma.fst.test.dao.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -12,30 +16,28 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="Tbook")
+@Table(name="livres")
 @Getter
 @Setter
+@ToString
 public class BookEntity {
 
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Integer id;
+    private Integer id;
     @Column(name="titre")
-    String title;
-    @Column(name="age")
-    Integer age;
+    private String title;
+    @Column(name="auteur")
+    private Integer author;
+    @Column(name="nombre_de_pages")
+    private Integer numOfPage;
 
     @Transient
     Double total;
 
-
-    @Override
-    public String toString() {
-        return "BookEntity{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                '}';
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_categorie")
+    private CategoryEntity categoryEntity;
 
 }

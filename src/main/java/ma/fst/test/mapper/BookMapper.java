@@ -12,7 +12,7 @@ public class BookMapper {
 
     public BookEntity convertToEntity(Book book){
         BookEntity target = new BookEntity();
-        target.setAge(book.getAge());
+        target.setNumOfPage(book.getNumOfPage());
         target.setTitle(book.getTitle());
 
        return target;
@@ -20,7 +20,7 @@ public class BookMapper {
 
     public Book convertToModel(BookEntity bookEntity){
         Book target = new Book();
-        target.setAge(bookEntity.getAge());
+        target.setNumOfPage(bookEntity.getNumOfPage());
         target.setTitle(bookEntity.getTitle());
 
         return target;

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * Created by Oussama_Qaiboub on 2020-12-31.
  */
 
-@Service
+@Service("bookServiceImpl")
 public class BookServiceImpl implements BookService {
 
     @Autowired
